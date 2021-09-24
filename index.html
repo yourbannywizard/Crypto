@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cryptography</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="img/logotpage.png" type="image/png">
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $(window).scroll(function(){
+                if ($(this).scrollTop() > 100) {
+                    $('.scrollup').fadeIn();
+                } else {
+                    $('.scrollup').fadeOut();
+                }
+            });
+
+            $('.scrollup').click(function(){
+                $("html, body").animate({ scrollTop: 0 }, 600);
+                return false;
+            });
+
+        });
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        home();
+    });
+
+      function home() {
+         $.ajax({  
+            url: "home.html",
+            cache: false,  
+            success: function(html){  
+                $("#content-box").html(html);  
+            }  
+        }); 
+
+                  $.ajax({  
+            url: "test1.html",
+            cache: false,  
+            success: function(html){  
+                $("#test-box").html(html);  
+            }  
+        }); 
+
+        $('#answer-box').html("<font color='green'>" + 0 + " правильных ответа</font>");
+
+
+     } 
+
+     function lecture1() {
+         $.ajax({  
+            url: "lecture1.html",
+            cache: false,  
+            success: function(html){  
+                $("#content-box").html(html);  
+            }  
+        }); 
+
+         $.ajax({  
+            url: "test2.html",
+            cache: false,  
+            success: function(html){  
+                $("#test-box").html(html);  
+            }  
+        }); 
+
+                 $('#answer-box').html("<font color='green'>" + 0 + " правильных ответа</font>");
+     } 
+
+     function lecture2() {
+         $.ajax({  
+            url: "lecture2.html",
+            cache: false,  
+            success: function(html){  
+                $("#content-box").html(html);  
+            }  
+        }); 
+
+         $.ajax({  
+            url: "test3.html",
+            cache: false,  
+            success: function(html){  
+                $("#test-box").html(html);  
+            }  
+        }); 
+
+                 $('#answer-box').html("<font color='green'>" + 0 + " правильных ответа</font>");
+     } 
+
+           function lecture3() {
+         $.ajax({  
+            url: "lecture3.html",
+            cache: false,  
+            success: function(html){  
+                $("#content-box").html(html);  
+            }  
+        }); 
+
+         $.ajax({  
+            url: "test4.html",
+            cache: false,  
+            success: function(html){  
+                $("#test-box").html(html);  
+            }  
+        }); 
+
+                 $('#answer-box').html("<font color='green'>" + 0 + " правильных ответа</font>");
+     } 
+
+
+
+    
+    function test1() {
+            var rezult = 0;
+            var h5 = 0, h5q = 0;
+            if ($('input[name=home-1]:checked').val() == 3) rezult++;
+            if ($('input[name=home-2]:checked').val() == 4) rezult++;
+            if ($('input[name=home-3]').val() == 5) rezult++;
+            if ($('input[name=home-4]:checked').val() == 2) rezult++;
+
+            $('#home-5 input:checkbox:checked').each(function(){
+                if( $(this).val() == 2 || $(this).val() == 4) h5q++;
+                h5++;
+            });
+
+            if (h5 == h5q && h5 > 0) rezult++;
+
+            if ( document.getElementById("home-6").options[document.getElementById("home-6").selectedIndex].value  == 2) rezult++;
+
+            $('#answer-box').html("<font color='green'>" + rezult + " правильных ответа</font>");
+           
+     }
+
+
+ function test2() {
+            var rezult = 0;            
+            if ($('input[name=home-1]:checked').val() == 3) rezult++;
+            if ($('input[name=home-2]:checked').val() == 2) rezult++;
+            if ($('input[name=home-3]:checked').val() == 2) rezult++;
+            if ($('input[name=home-4]').val() == "УФМЁЦ") rezult++;
+            if ($('input[name=home-5]').val() == "ЯСУО ТОПЧИК") rezult++;
+
+            $('#answer-box').html("<font color='green'>" + rezult + " правильных ответа</font>");
+     }
+
+
+ function test3() {
+            var rezult = 0;            
+            if ($('input[name=home-1]:checked').val() == 3) rezult++;
+            if ($('input[name=home-2]:checked').val() == 3) rezult++;            
+            if ($('input[name=home-3]').val() == "NKQQT") rezult++;
+            if ($('input[name=home-4]').val() == "FNNVD") rezult++;
+            if ($('input[name=home-5]').val() == "КРИПТОГРАФИЯ" ) rezult++;
+
+            $('#answer-box').html("<font color='green'>" + rezult + " правильных ответа</font>");
+     }
+
+      function test4() {
+            var rezult = 0;            
+            if ($('input[name=home-1]:checked').val() == 1) rezult++;          
+            if ($('input[name=home-2]').val() == "СЭМЮЭЛЬ МОРЗЕ") rezult++;
+            if ($('input[name=home-3]:checked').val() == 2) rezult++;  
+
+             if ( document.getElementById("home-4").options[document.getElementById("home-4").selectedIndex].value  == 3) rezult++;
+
+            if ($('input[name=home-5]').val() == ".--.-." ) rezult++;
+
+            $('#answer-box').html("<font color='green'>" + rezult + " правильных ответа</font>");
+     }
+
+
+
+
+ </script>
+
+</head>
+
+<a href="#" class="scrollup">Наверх</a>
+
+<body>
+	<div class="head-box">
+
+		<div class="logo-box">
+			<a href="javascript:home();"><img src="img/logotype.png" alt="iconka"></a>
+		</div>
+
+		<div class="menu-box">
+			<ul>
+				<li><a href="javascript:lecture1();">Шифр Цезаря</a></li>
+				<li><a href="javascript:lecture2();">Квадрат Полибия</a></li>
+				<li><a href="javascript:lecture3();">Азбука Морзе</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+
+
+	<div class="body-box">
+		<div class="left-box">
+			<div class="box" id="content-box">
+				
+
+			</div>
+
+		</div>
+
+
+		<div class="right-box">
+
+			<div class="box" id="test-box">
+
+
+           </div>
+
+
+           <div class="rezult-box">
+               
+               <p>Ваш результат: <span id="answer-box"></span></p>              
+
+           </div>
+
+       </div>
+
+   </div>
+   
+   <div style="display: none;">
